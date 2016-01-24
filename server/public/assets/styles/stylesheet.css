@@ -1,43 +1,51 @@
 body {
-  color: blue;
+  color: #311557;
   width: 100%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  background-color: #806515; }
 
 header, footer {
-  background-color: salmon;
+  background-color: #806515;
   padding: 5px; }
 
 header {
-  border-bottom: solid 5px;
-  margin: 0 0 10px 0; }
+  border-bottom: solid 5px #311557;
+  margin: 0; }
 
 footer {
-  border-top: solid 2px blue;
-  margin: 10px 0 0 0; }
+  border-top: solid 2px #311557;
+  margin: 0; }
+
+.inner {
+  background-color: #343477;
+  width: 100%;
+  margin: 0;
+  padding: 10px 0; }
 
 .view-button {
-  background-color: lightgrey;
-  color: blue;
-  width: 500px;
-  border: none; }
+  background-color: #565695;
+  color: #311557;
+  border: none;
+  padding: 5px; }
 
 .view-button:hover {
-  background-color: grey; }
+  background-color: #343477; }
 
 .buttons {
   padding: 10px;
   display: flex;
   justify-content: space-between;
-  background-color: lightgreen;
+  background-color: #AAA039;
   margin: 0 auto;
   width: 85%;
-  border-bottom: solid 5px salmon; }
+  border-bottom: solid 5px #806515; }
 
 .view-box {
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: #8080b3;
   width: 85%;
-  padding: 10px; }
+  padding: 10px;
+  min-height: 90%; }
 
 .directives {
   width: 100%;
@@ -55,21 +63,21 @@ footer {
   display: inline; }
 
 .client-box {
-  background-color: lightgreen;
+  background-color: #AAA039;
   padding: 10px;
-  border: solid salmon 2px;
+  border: solid #806515 2px;
   margin: 10px;
   width: 95%;
   float: left; }
 
 .address-box {
-  background-color: lightgreen;
+  background-color: #AAA039;
   padding: 10px;
-  border: solid salmon 2px;
+  border: solid #806515 2px;
   margin: 10px;
   width: 95%; }
 
 .total {
-  color: red; }
+  color: #09093b; }
 
 /*# sourceMappingURL=stylesheet.css.map */

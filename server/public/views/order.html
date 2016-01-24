@@ -15,6 +15,7 @@
 
     <div class="boxes">
         <div class="client-box" ng-repeat="order in orders">
+            <p>Order Number: {{order.other.order_id}}</p>
             <p>Ship Address:<br> {{order.other.address_street}}<br>{{order.other.address_city}}, {{order.other.address_state}}</p>
             <p>Order Date: {{order.date}}</p>
             <p>Order Total: ${{order.amount}}</p>
