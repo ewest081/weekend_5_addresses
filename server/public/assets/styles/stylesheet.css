@@ -40,7 +40,9 @@ footer {
   width: 85%; }
 
 .boxes {
-  width: 85%; }
+  width: 85%;
+  margin: 0 auto;
+  display: inline-block; }
 
 .client-box {
   background-color: lightgreen;

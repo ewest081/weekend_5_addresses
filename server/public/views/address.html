@@ -1,6 +1,6 @@
 <div class="view-box">
     <div class="directives">
-        <h4>Please select the customer whose addresses you would like to view:</h4>
+        <h4>Please select the customer who's addresses you would like to view:</h4>
         <select ng-model="currentUser" ng-change="getAddresses()" ng-options="user.id as user.name for user in users track by user.id"></select>
     </div>
 

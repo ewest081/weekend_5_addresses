@@ -55,11 +55,20 @@ app.controller('OrderController', ['$scope', '$http', function($scope, $http){
 
         $http.get('/api/getOrders', clientID).then(function(response){
             var total = 0;
-            $scope.orders = response.data;
+            var orderData = response.data;
+            $scope.orders = [];
 
-            for(i=0; i < $scope.orders.length; i++){
-                total += Number($scope.orders[i].amount);
-                console.log(total);
+            for(i=0; i < orderData.length; i++){
+                var thisOrder = {};
+                var current = orderData[i];
+
+                total += Number(current.amount);
+
+                thisOrder.date = current.order_date.slice(0,10);
+                thisOrder.other = current;
+                thisOrder.amount = current.amount;
+                thisOrder.name = current.name;
+                $scope.orders.push(thisOrder);
             }
 
             $scope.userName = "Orders for " + $scope.orders[0].name + ":";
@@ -69,3 +78,6 @@ app.controller('OrderController', ['$scope', '$http', function($scope, $http){
 
     getUsers();
 }]);
+
+//date = ($scope.orders[i].order_date).slice(0,10);
+
