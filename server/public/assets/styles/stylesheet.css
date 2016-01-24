@@ -1,4 +1,14 @@
 body {
-  color: red; }
+  color: blue;
+  width: 85%;
+  margin: 0 auto; }
+
+header {
+  border-bottom: solid 5px;
+  margin: 0 0 10px 0; }
+
+footer {
+  border-top: solid 2px blue;
+  margin: 10px 0 0 0; }
 
 /*# sourceMappingURL=stylesheet.css.map */

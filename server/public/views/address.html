@@ -1,0 +1,11 @@
+<div class="view-box">
+    <h4>Please select the customer you would like to view:</h4>
+
+    <select ng-model="currentUser" ng-change="getAddresses()" ng-options="user.id as user.name for user in users track by user.id"></select>
+
+    <div class="client-box" ng-repeat="user in addresses">
+        <p>Address Name: {{user.address_type}} <br>
+        {{user.address_street}} <br>
+        {{user.address_city}}, {{user.address_state}} {{user.address_zip}} <br></p>
+    </div>
+</div>

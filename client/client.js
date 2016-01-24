@@ -5,9 +5,9 @@ var app = angular.module('clientApp', ['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/simple', {
-            templateUrl: 'views/simple.html',
-            controller: 'SimpleController'
+        .when('/address', {
+            templateUrl: 'views/address.html',
+            controller: 'AddressController'
         })
         .when('/order', {
             templateUrl: 'views/order.html',
@@ -16,10 +16,8 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
-app.controller('SimpleController', ['$scope', '$http', '$window', function($scope, $http, $window){
+app.controller('AddressController', ['$scope', '$http', function($scope, $http){
     $scope.users = [];
-
-    $scope.message = "This is a simple message.";
 
     function getUsers() {
         $http.get('/api/getUsers').success(function (response) {
@@ -32,7 +30,6 @@ app.controller('SimpleController', ['$scope', '$http', '$window', function($scop
 
         $http.get('/api/getAddress', clientID).then(function(response){
             $scope.addresses = response.data;
-            console.log(response)
         });
     };
 
