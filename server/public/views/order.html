@@ -1,20 +1,29 @@
 <div class="view-box">
     <div class="directives">
-        <h4>Please select the customer whose orders you would like to view:</h4>
-        <select ng-model="currentUser" ng-change="getOrders()" ng-options="user.id as user.name for user in users track by user.id"></select>
-
         <h4>Please select the range of dates you would like to view orders for:</h4>
         Start date: <input type="date" ng-model="earlyDate"><br>
         End date: <input type="date" ng-model="lateDate"><br>
-        <button type="submit" ng-click="getOrders()">Submit</button>
+
+        <h4>Please select the customer whose orders you would like to view:</h4>
+        <select ng-model="currentUser" ng-change="getOrders()" ng-options="user.id as user.name for user in users track by user.id"></select>
+
+        <br><br>
+
+        <button type="submit" ng-click="getOrders()">Update</button>
     </div>
 
-    {{orders}}
+    <!--{{orders}}-->
 
-    <!--<div class="boxes">-->
-        <!--<div class="client-box" ng-repeat="order in orders">-->
+    <h4>{{userName}}</h4>
 
-        <!--</div>-->
-    <!--</div>-->
+    <div class="boxes">
+        <div class="client-box" ng-repeat="order in orders">
+            <p>Ship Address:<br> {{order.address_street}}<br>{{order.address_city}}, {{order.address_city}} {{order.address_state}}</p>
+            <p>Order Date: {{order.order_date}}</p>
+            <p>Order Total: ${{order.amount}}</p>
+        </div>
+    </div>
+
+    <h2>{{totalSpent}}</h2>
 
 </div>

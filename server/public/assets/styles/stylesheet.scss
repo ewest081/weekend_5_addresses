@@ -19,14 +19,14 @@ footer {
   margin: 10px 0 0 0;
 }
 
-button {
+.view-button {
   background-color: lightgrey;
   color: blue;
   width: 500px;
   border: none;
 }
 
-button:hover {
+.view-button:hover {
   background-color: grey;
 }
 
@@ -48,7 +48,7 @@ button:hover {
 }
 
 .boxes {
-  display: inline-flex;
+  width: 85%;
 }
 
 .client-box {

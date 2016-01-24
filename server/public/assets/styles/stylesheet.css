@@ -15,13 +15,13 @@ footer {
   border-top: solid 2px blue;
   margin: 10px 0 0 0; }
 
-button {
+.view-button {
   background-color: lightgrey;
   color: blue;
   width: 500px;
   border: none; }
 
-button:hover {
+.view-button:hover {
   background-color: grey; }
 
 .buttons {
@@ -40,7 +40,7 @@ button:hover {
   width: 85%; }
 
 .boxes {
-  display: inline-flex; }
+  width: 85%; }
 
 .client-box {
   background-color: lightgreen;

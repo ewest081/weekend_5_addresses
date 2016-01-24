@@ -47,16 +47,25 @@ app.controller('OrderController', ['$scope', '$http', function($scope, $http){
     }
 
     $scope.getOrders = function(){
+
         var clientID = {params: {id: $scope.currentUser,
                                 earlyDate: $scope.earlyDate.toISOString(),
                                 lateDate: $scope.lateDate.toISOString()}
         };
 
         $http.get('/api/getOrders', clientID).then(function(response){
+            var total = 0;
             $scope.orders = response.data;
+
+            for(i=0; i < $scope.orders.length; i++){
+                total += Number($scope.orders[i].amount);
+                console.log(total);
+            }
+
+            $scope.userName = "Orders for " + $scope.orders[0].name + ":";
+            $scope.totalSpent = "Total spend by this customer for the above orders: $" + total;
         });
     };
-
 
     getUsers();
 }]);
