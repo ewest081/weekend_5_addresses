@@ -16,21 +16,24 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
     //$locationProvider.html5Mode(true);
 }]);
 
-app.controller('SimpleController', ['$scope', '$http', function($scope, $http){
+app.controller('SimpleController', ['$scope', '$http', '$window', function($scope, $http, $window){
     $scope.users = [];
 
     $scope.message = "This is a simple message.";
 
     function getUsers() {
-        $http.get('/dbRoute/getUsers').success(function (response) {
+        $http.get('/api/getUsers').success(function (response) {
             $scope.users = response;
         })
     }
 
-    $scope.currentUser;
+    $scope.getAddresses = function() {
+        var clientID = {params: {id: $scope.currentUser}};
 
-    $scope.getAddress = function() {
-        console.log(currentUser);
+        $http.get('/api/getAddress', clientID).then(function(response){
+            $scope.addresses = response.data;
+            console.log(response)
+        });
     };
 
     getUsers();

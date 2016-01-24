@@ -12,7 +12,7 @@ router.get('/getUsers', function(request, response){
 
     pg.connect(connectionString, function(err, client){
 
-        var query = client.query('SELECT name FROM users');
+        var query = client.query('SELECT * FROM users');
 
         query.on('row', function(row){
             results.push(row);
@@ -26,9 +26,31 @@ router.get('/getUsers', function(request, response){
         if(err) {
             console.log(Error)
         }
-
-        //console.log(response)
     })
+});
+
+router.get('/getAddress', function(request, response){
+
+    var clientID = {id: request.query.id};
+    var results = [];
+
+    pg.connect(connectionString, function(err, client){
+        var query = client.query('SELECT * FROM addresses WHERE user_id = ($1)', [clientID.id]);
+
+        query.on('row', function(row){
+            results.push(row);
+        });
+
+        query.on('end', function(){
+            client.end();
+            return response.json(results);
+        });
+
+        if(err){
+            console.log(Error);
+        }
+    })
+
 });
 
 module.exports = router;
