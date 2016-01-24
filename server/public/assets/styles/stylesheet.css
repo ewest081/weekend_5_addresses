@@ -36,19 +36,40 @@ footer {
 .view-box {
   margin: 0 auto;
   background-color: lightblue;
-  padding: 10px;
-  width: 85%; }
+  width: 85%;
+  padding: 10px; }
+
+.directives {
+  width: 100%;
+  padding: 5px;
+  margin: 0 auto; }
+
+.user-total {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2px; }
 
 .boxes {
   width: 85%;
   margin: 0 auto;
-  display: inline-block; }
+  display: inline; }
 
 .client-box {
   background-color: lightgreen;
   padding: 10px;
   border: solid salmon 2px;
   margin: 10px;
-  width: 200px; }
+  width: 95%;
+  float: left; }
+
+.address-box {
+  background-color: lightgreen;
+  padding: 10px;
+  border: solid salmon 2px;
+  margin: 10px;
+  width: 95%; }
+
+.total {
+  color: red; }
 
 /*# sourceMappingURL=stylesheet.css.map */

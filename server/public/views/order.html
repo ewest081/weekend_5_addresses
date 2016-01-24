@@ -11,16 +11,16 @@
         <button type="submit" ng-click="getOrders()">Update</button>
     </div>
 
-    <h4>{{userName}}</h4>
+    <h3>{{userName}}</h3>
 
     <div class="boxes">
         <div class="client-box" ng-repeat="order in orders">
-            <p>Ship Address:<br> {{order.other.address_street}}<br>{{order.other.address_city}}, {{order.other.address_city}} {{order.other.address_state}}</p>
+            <p>Ship Address:<br> {{order.other.address_street}}<br>{{order.other.address_city}}, {{order.other.address_state}}</p>
             <p>Order Date: {{order.date}}</p>
             <p>Order Total: ${{order.amount}}</p>
         </div>
+        <div class="user-total"><h2>{{totalMessage}}<span class="total">{{totalSpent}}</span></h2></div>
     </div>
 
-    <h2>{{totalSpent}}</h2>
-
 </div>
+

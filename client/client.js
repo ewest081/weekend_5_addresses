@@ -72,7 +72,9 @@ app.controller('OrderController', ['$scope', '$http', function($scope, $http){
             }
 
             $scope.userName = "Orders for " + $scope.orders[0].name + ":";
-            $scope.totalSpent = "Total spend by this customer for the above orders: $" + total;
+            $scope.totalMessage = "Total spend by this customer for the above orders: ";
+            $scope.totalSpent = "$" + total;
+
         });
     };
 
