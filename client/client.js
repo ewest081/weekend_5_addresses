@@ -36,6 +36,27 @@ app.controller('AddressController', ['$scope', '$http', function($scope, $http){
     getUsers();
 }]);
 
-app.controller('OrderController', ['$scope', function($scope){
-    $scope.message = "This is an orderly message."
+app.controller('OrderController', ['$scope', '$http', function($scope, $http){
+    $scope.message = "This is an orderly message.";
+    $scope.users = [];
+
+    function getUsers() {
+        $http.get('/api/getUsers').success(function (response) {
+            $scope.users = response;
+        })
+    }
+
+    $scope.getOrders = function(){
+        var clientID = {params: {id: $scope.currentUser,
+                                earlyDate: $scope.earlyDate.toISOString(),
+                                lateDate: $scope.lateDate.toISOString()}
+        };
+
+        $http.get('/api/getOrders', clientID).then(function(response){
+            $scope.orders = response.data;
+        });
+    };
+
+
+    getUsers();
 }]);

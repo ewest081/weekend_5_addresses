@@ -1,10 +1,10 @@
 body {
   color: blue;
-  width: 85%;
+  width: 100%;
   margin: 0 auto; }
 
 header, footer {
-  background-color: lightcoral;
+  background-color: salmon;
   padding: 5px; }
 
 header {
@@ -15,25 +15,37 @@ footer {
   border-top: solid 2px blue;
   margin: 10px 0 0 0; }
 
+button {
+  background-color: lightgrey;
+  color: blue;
+  width: 500px;
+  border: none; }
+
+button:hover {
+  background-color: grey; }
+
 .buttons {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   background-color: lightgreen;
-  margin: 0 0 10px 0; }
+  margin: 0 auto;
+  width: 85%;
+  border-bottom: solid 5px salmon; }
 
 .view-box {
   margin: 0 auto;
   background-color: lightblue;
-  padding: 10px; }
+  padding: 10px;
+  width: 85%; }
 
 .boxes {
   display: inline-flex; }
 
 .client-box {
-  background-color: white;
+  background-color: lightgreen;
   padding: 10px;
-  border: solid blue 2px;
+  border: solid salmon 2px;
   margin: 10px;
   width: 200px; }
 
