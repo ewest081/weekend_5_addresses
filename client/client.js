@@ -37,7 +37,6 @@ app.controller('AddressController', ['$scope', '$http', function($scope, $http){
 }]);
 
 app.controller('OrderController', ['$scope', '$http', function($scope, $http){
-    $scope.message = "This is an orderly message.";
     $scope.users = [];
 
     function getUsers() {
@@ -71,15 +70,24 @@ app.controller('OrderController', ['$scope', '$http', function($scope, $http){
                 $scope.orders.push(thisOrder);
             }
 
-            $scope.userName = "Orders for " + $scope.orders[0].name + ":";
-            $scope.totalMessage = "Total spend by this customer for the above orders: ";
-            $scope.totalSpent = "$" + total;
+            if(orderData.length == 0){
+                $scope.blankMessage = "There are no orders from this customer on record for the specified dates.";
+                $scope.userName = '';
+                $scope.totalMessage = '';
+                $scope.totalSpent = ''
+            }else{
+                $scope.blankMessage = '';
+                $scope.userName = "Orders for " + $scope.orders[0].name + ":";
+                $scope.totalMessage = "Total spend by this customer for the above orders: ";
+                $scope.totalSpent = "$" + total;
+            }
+
+            //$scope.userName = "Orders for " + $scope.orders[0].name + ":";
+            //$scope.totalMessage = "Total spend by this customer for the above orders: ";
+            //$scope.totalSpent = "$" + total;
 
         });
     };
 
     getUsers();
 }]);
-
-//date = ($scope.orders[i].order_date).slice(0,10);
-
